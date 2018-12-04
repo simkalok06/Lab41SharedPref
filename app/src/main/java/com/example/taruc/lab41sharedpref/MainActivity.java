@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private TextView editTextName;
     private ImageView profile;
-
+    private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         //TODO: read shared preference file
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.pref_file), MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_file), MODE_PRIVATE);
         String name;
         int gender; //-1 default, 1 male, 0 = female;
         name = sharedPreferences.getString("name","");
